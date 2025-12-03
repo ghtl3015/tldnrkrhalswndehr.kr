@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>찐플로: 철벽 훈련 시스템</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f4f9; color: #333; margin: 0; padding: 20px; }
+        .container { max-width: 600px; margin: 0 auto; background-color: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+        h1 { color: #5c67d6; text-align: center; margin-bottom: 25px; }
+        .intro { text-align: center; margin-bottom: 30px; font-size: 1.1em; color: #666; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; }
+        select, button { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 1em; }
+        select { background-color: #fff; cursor: pointer; }
+        button { background-color: #5c67d6; color: white; border: none; cursor: pointer; transition: background-color 0.3s; }
+        button:hover { background-color: #4550b3; }
+        #message-area { margin-top: 25px; padding: 15px; border-radius: 8px; background-color: #e9ecef; min-height: 50px; text-align: center; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🛡️ 철벽 훈련 시스템: 거절 연습</h1>
+        <p class="intro">
+            **36번 박서현**! 더 이상 부탁을 들어주다 지치지 마. 여기서 죄책감 없이 **'싫다'**고 말하는 연습을 시작하자.
+        </p>
+
+        <div class="form-group">
+            <label for="scenario-select">어떤 상황을 연습해 볼래?</label>
+            <select id="scenario-select">
+                <option value="" disabled selected>시나리오를 선택하세요.</option>
+                <option value="숙제 부탁 거절 (난이도: 쉬움)">숙제 대신 해달라는 친구 부탁 거절</option>
+                <option value="용돈 요구 거절 (난이도: 보통)">돈 빌려달라는 친구 부탁 거절</option>
+                <option value="뒷담화 참여 거절 (난이도: 어려움)">뒷담화에 동조하라는 요구 거절</option>
+                <option value="주말 약속 거절 (난이도: 쉬움)">쉬고 싶어서 주말 약속 거절</option>
+            </select>
+        </div>
+
+        <button id="start-training-btn">훈련 시작!</button>
+
+        <div id="message-area">
+            시나리오를 선택하고 훈련 시작 버튼을 누르면 AI 친구가 나타날 거야.
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('start-training-btn').addEventListener('click', function() {
+            const selectedScenario = document.getElementById('scenario-select').value;
+            const messageArea = document.getElementById('message-area');
+            
+            if (selectedScenario) {
+                // 나중에 여기에 AI 챗봇 컴포넌트를 띄우는 코드가 들어갈 거야.
+                messageArea.innerHTML = `
+                    <h2>🤖 롤플레잉 시작!</h2>
+                    <p style="color: #5c67d6;">선택 시나리오: **${selectedScenario}**</p>
+                    <p>AI 친구가 먼저 말을 걸어올 거야. 준비됐니?</p>
+                `;
+                // 실제로는 여기서 AI 챗봇 인터페이스를 렌더링해야 함.
+            } else {
+                messageArea.textContent = "야, 시나리오부터 골라. 훈련할 게 없잖아.";
+            }
+        });
+    </script>
+
+</body>
+</html>
